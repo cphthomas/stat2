@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<link rel="prev" href="index.html">
-<link rel="next" href="chi-i-anden-tests.html">
+<link rel="prev" href="den-hypergeometriske-fordeling.html">
+<link rel="next" href="stikprveteori.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -137,178 +137,61 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="sandsynligheder" class="section level1">
-<h1><span class="header-section-number">Kapitel 1</span> Sandsynligheder</h1>
-<p>Vi vil her se på sandsynligheder. Hvis vi forestiller os, man har på en cafe har spurgt 800 besøgende, om de drikker the, kaffe eller begge dele, og har fået følgende svar.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Kaffe</th>
-<th align="left">The</th>
-<th align="left">Både kaffe og the</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">600</td>
-<td align="left">400</td>
-<td align="left">200</td>
-</tr>
-</tbody>
-</table>
-<p>Vi kan opstille resultaterne i et Venn-diagram som vist på figuren.<img src="img/sandsynligheder1.png" align="right" width="35%" height="35%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/> Vi kan udføre et stokastisk eksperiment og tilfældigt udtage en person og undersøge, hvor stor sandsynligheden er for at vedkommende drikker kaffe.</p>
-<p>Vi skriver P for probability dvs. sandsynlighed. Sandsynligheden for en person drikker kaffe kan opskrives som:</p>
-<p><span class="math display">\[\small P(Kaffe)=\frac{Antal\ kaffe-drikkere}{Antal\ adspurgte}=\frac{600}{800}=0.75=75\%\]</span></p>
-<p>På samme måde kan man finde sandsynligheden for at en person drikker the:</p>
-<p><span class="math display">\[\small P(The)=\frac{Antal\ the-drikkere}{Antal\ adspurgte}=\frac{400}{800}=0.5=50\%\]</span></p>
-<div id="betingede-sandsynligheder" class="section level2">
-<h2><span class="header-section-number">1.1</span> Betingede sandsynligheder</h2>
-<p>Vi kan også se på en mindre gruppe af de adspurgte, hvis fx. man kun vil se på kaffedrikkerne kunne man ønske at undersøge, hvor stor en andel af kaffedrikkerne der både drikker the og kaffe. Vi siger at vi betinger med en hændelse, hvis vi ser på en sådan delmængde af de adspurgte. Betingede sandsynligheder kan formuleres på flere måder fx:</p>
-<p>Givet at man drikker kaffe hvad er da sandsynligheden for at man ligeledes drikker the?
-Hvis man drikker kaffe hvad er da sandsynligheden for at man ligeledes drikker the?
-Hvad er da sandsynligheden for, at man drikker the, når man drikker kaffe?
-Hvad er andelen af kaffedrikkere, der drikker the?</p>
-<p>Vi siger vi betinger med hændelsen A, man drikker kaffe, og ser således kun på gruppen af kaffedrikkere. Hvad er så sandsynligheden for at man også drikker the hændelsen B?
-Vi skal altså bestemme sandsynligheden for B givet A, med symboler skriver vi det som <span class="math inline">\(\small P(B\mid A)\)</span>. Vi kan udregne dette som
-<span class="math display">\[\small P(B\mid A)=\frac{P(B\cap A)}{P(A)}\]</span></p>
-<p>Det betyder vi kan udregne hvad er andelen af kaffedrikkere, der drikker the, ved formlen:
-<span class="math display">\[\small P(B\mid A)=P(kaffe\ og\ the\mid  kaffe)=\frac{P(kaffe\ og\ the\cap kaffe)}{P(kaffe)}\]</span>
-<span class="math display">\[\small \frac{\frac{200}{800}}{\frac{600}{800}}=\frac{200}{600}=\frac{1}{3}\approx 33\%\]</span></p>
-<div id="race-og-ddsdom-eksempel" class="section level3">
-<h3><span class="header-section-number">1.1.1</span> Race og dødsdom eksempel</h3>
-<p><img src="img/death-row-inmates-drug-cocktail.jpg" align="right" width="40%" height="40%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/></p>
-<p>I et kendt studie fra 1991 af Radelet and Pierce, om Florida, har man indsamlet data i retssager hvor der var mulighed for dødsstraf. Man har blandt andet indsamlet data om den tiltaltes etnicitet, offerets etnicitet samt udfaldet af retssagen dvs. om den tiltalte blev idømt dødstraf eller ikke. Studiets formål var at afgøre om der ved domstolene er en bias, således at amerikanere af afrikansk afstamning oftere idømmmes dødsstraf end hvide.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Race tiltalt</th>
-<th align="left">Dødsdom</th>
-<th align="left">Ikke dødsdom</th>
-<th align="left">Total</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Hvid</td>
-<td align="left">53</td>
-<td align="left">430</td>
-<td align="left">483</td>
-</tr>
-<tr class="even">
-<td align="left">Afrikansk amerikaner</td>
-<td align="left">15</td>
-<td align="left">176</td>
-<td align="left">191</td>
-</tr>
-<tr class="odd">
-<td align="left">Total</td>
-<td align="left">68</td>
-<td align="left">606</td>
-<td align="left">674</td>
-</tr>
-</tbody>
-</table>
-<p>Sandsynligheden for at blive dødsdømt, når man er tiltalt kan udregnes til:
-<span class="math display">\[\small P(dø\ dsdom)=\frac{dø\ dsdø\ mte}{alle\ tiltalte}=\frac{68}{674}=0.1009\]</span></p>
-<p>Sandsynligheden for at blive dødsdømt, når man er hvid og tiltalt er en betinget sandsynlighed, denne kan udregnes til:
-<span class="math display">\[\small P(dø\ dsdom\mid hvid)=\frac{P(dø\ dsdom \cap hvid)}{P(hvide\ tiltalte)}=\frac{53}{483}=0.1097\]</span></p>
-<p>Sandsynligheden for at blive dødsdømt, hvis man er afrikansk-amerikaner og tiltalt er en betinget sandsynlighed, denne kan udregnes til:
-<span class="math display">\[\small P(dø\ dsdom\mid sort)=\frac{P(dø\ dsdom\cap sort)}{P(sorte\ tiltalte)}=\frac{15}{191}=0.0785\]</span></p>
-<p>Dette tyder ikke på at der er racemæssig forskel på andelen af dødsdømte.</p>
+<div id="poisson-fordelingen" class="section level1">
+<h1><span class="header-section-number">Kapitel 6</span> Poisson fordelingen</h1>
+<p>Poisson fordelingen er en diskret sandsynlighedsfordeling der angiver sandsynligheden for at et antal begivenheder, indtræffer indenfor i tid eller rum. Fx.
+<img src="img/car.png" align="right" width="30%" height="30%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/>
+1. Antal cykelpunkteringer indenfor 1000 km.
+2. Antal mål i EM-finalen.
+3. Antal dødsfald i trafikken på et år.
+4. Antal kunder i en bankfilial i timen.
+5. Antal skadesanmeldelser i løbet af ugen.</p>
+<p>Poisson fordelingen har kun en parameter middelværdien <span class="math inline">\(\lambda\)</span> (det græske bogstav lambda), det forventede antal hændelser pr. enhed. Notationen for en stokastisk variabel der er poissonfordelt er:</p>
+<p><span class="math display">\[X\sim Pois(\lambda)\]</span></p>
+<p>Når vi kender <span class="math inline">\(\lambda\)</span> kan vi beregne punktsandsynligheden for at den stokastiske variabel X er netop x som:</p>
+<p><span class="math display">\[P(X=x)=\frac{e^{-\lambda}\cdot \lambda^x}{x!}\]</span>
+<img src="img/Puncture.jpg" align="right" width="30%" height="30%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/></p>
+<p>Uafhængighed mellem antal hændelser der intræffer i 2 på hinanden følgende intervaller er en forudsætning. Har der fx. være 1 punktering på de første 1000 km. påvirker dette ikke det forventede antal punkteringer på de næste 1000 km. Vi kalder også <span class="math inline">\(\lambda\)</span> for intensiteten, intensiteten er konstant for intervaller af samme længde og proportional. Er <span class="math inline">\(\lambda\)</span>=3 for hver 1000 kilometer, bliver <span class="math inline">\(\lambda\)</span>=6 for 2000 kilometer.</p>
+<p>Hvis det forventede antal punkteringer <span class="math inline">\(\lambda=3\)</span>, kan vi beregne sandsynligheden for fx. 4 punkteringer som:</p>
+<p><span class="math display">\[P(X=4)=\frac{e^{-\lambda}\cdot \lambda^x}{x!}=\frac{e^{-3}\cdot 3^4}{4!}=\frac{4.032753}{4\cdot 3\cdot 2\cdot 1}=0.1680\]</span></p>
+<p>Sandsynligheden for netop 4 punkteringer er derfor 17%.
+Ønsker vi at bestemme sandsynligheden for højst 4 punkteringer dvs. <span class="math inline">\(P(X\leq 4)\)</span>.
+<span class="math display">\[P(X\leq 4)=P(X=0)+P(X=1)+P(X=2)+P(X=3)+P(X=4)=\]</span><span class="math display">\[0.0498+0.1494+0.2240+0.2240+0.1680=0.8152\]</span></p>
+<p>Sandsynligheden for flere end 4 punkteringer dvs. <span class="math inline">\(P(X&gt;4)\)</span> kan udregnes som:</p>
+<p><span class="math display">\[P(X&gt;4)=1-P(X\leq 4)=1-0.8152=0.1848\]</span></p>
+<p>Variansen for poissonfordelingen er <span class="math inline">\(\lambda\)</span>, heraf følger at standardafvigelsen som kvadratroden af <span class="math inline">\(\lambda\)</span> dvs. <span class="math inline">\(\lambda^{0.5}\)</span></p>
+<p>Vi får følgende sandsynlighedfordeling.</p>
+<p><img src="bookdown-demo_files/figure-html/hyp3-1.svg" width="864" /></p>
+<p>Nedenfor ses output fra Freestat:
+<img src="img/poisson.png" alt="rmd" /></p>
+<p>[toggle title=Spørgsmål]
+<img src="img/bankkunder.jpg" align="right" width="30%" height="30%"style="border:0.0px solid #eeeeee; padding:5px;margin:6px;"/>
+Antag at antal kunder der ankommer i en bank i minuttet er poissonfordelt med intensitet 2.
+1. Hvad er sandsynligheden for der netop ankommer 1 kunde i minuttet?
+2. Hvad er sandsynligheden for der netop ankommer 10 kunder på 10 minutter?
+3. Hvad er sandsynligheden for der mindst ankommer 1 kunde i minuttet?
+[/toggle]
+[toggle title=Svar]
+1. Vi skal finde sandsynligheden for der netop ankommer 1 kunde i minuttet. Her er tale om en poisson fordeling med parameter <span class="math inline">\(\lambda\)</span>=2, vi ønsker at bestemme sandsynligheden for at x=1.
+<span class="math display">\[P(X=1)=\frac{e^{-\lambda}\cdot \lambda^x}{x!}=\frac{e^{-2}\cdot 2^1}{1!}=0.2707\]</span>
+<img src="img/poisson2.png" alt="rmd" />
+2. Vi skal finde sandsynligheden for der netop ankommer 10 kunder på 10 minutter. Her er tale om en poisson fordeling med parameter <span class="math inline">\(\lambda\)</span>=20. Vi skal jo betragte 10 minutters intervallet, derfor ganger vi intensiteten for 1 minut <span class="math inline">\(\lambda\)</span>=2 med 10. Vi ønsker at bestemme sandsynligheden for at x=10.
+<span class="math display">\[P(X=10)=\frac{e^{-\lambda}\cdot \lambda^x}{x!}=\frac{e^{-20}\cdot 20^{10}}{10!}=0.0058\]</span>
+<img src="img/poisson3.png" alt="rmd" />
+3. Vi kan bestemme sandsynligheden for der mindst ankommer 1 kunde i minuttet ved:
+<span class="math display">\[P(X\geq 1)=1-P(X=0)=1-0.1353=0.8647\]</span>
+<img src="img/poisson2.png" alt="rmd" /></p>
+<p>[/toggle]</p>
+<div id="selvtest-4" class="section level2">
+<h2><span class="header-section-number">6.1</span> Selvtest</h2>
+<h2>
+<a href="https://www.edutest.dk/mod/quiz/view.php?id=62" target="_blank">Selvtest poissonfordelingen med videoløsning</a>
+</h2>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">
+<iframe src="https://player.vimeo.com/video/259842430" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
 </div>
-</div>
-<div id="uafhngighed" class="section level2">
-<h2><span class="header-section-number">1.2</span> Uafhængighed</h2>
-<p>Vi kan sige at 2 hændelser A og B er uafhængige hvis sandsynligheden for at den ene hændelse indtræffer ikke påvirkes af om den anden hændelse indtræffer eller ej. Dette kan vi udtrykke vha. betingede sandsynligheder.</p>
-<p><span class="math display">\[\small P(A\mid B)=P(A)\]</span>
-Her står sandsynligheden for A er den samme ligegyldigt om hændelsen B indtræffer eller ej.
-<span class="math display">\[\small P(B\mid A)=P(B)\]</span>
-Her står sandsynligheden for B er den samme ligegyldigt om hændelsen A indtræffer eller ej.</p>
-<p>Vi kan omskrive begge ligninger til nedenstående resultat.
-<span class="math display">\[\small P(A\mid B)=P(A)\Leftrightarrow \frac{P(A\cap B)}{P(B)}=P(A)\Leftrightarrow P(A\cap B)=P(A)\cdot P(B)\]</span>
-Så hændelserne A og B er uafhængige hvis fælleshændelsen <span class="math inline">\(\small P(A\cap B)\)</span> er lig med produktet af hændelserne <span class="math inline">\(\small P(A) \cdot P(B)\)</span></p>
-<p>Er hændelserne drikke kaffe og the uafhængige?
-Vi finder sandsynligheden for fælleshændelsen:
-<span class="math display">\[\small P(Kaffe \cap The)=\frac{200}{800}=0.25\]</span>
-Er sandsynligheden for fælleshændelsen lig med produktet af sandsynlighederne?
-<span class="math display">\[\small P(Kaffe)\cdot P(The)=\frac{600}{800}\cdot \frac{400}{800}=\frac{3}{4}\cdot \frac{1}{2}=\frac{3}{8}=0.375\]</span>
-Hændelserne er altså ikke uafhængige for 0.25 er ikke 0.375.</p>
-<p>Vi ser på om hændelserne hvid tiltalt og dødsdom er afhængige.
-Vi finder sandsynligheden for fælleshændelsen:
-<span class="math display">\[\small P(Dø\ dsdom \cap Hvid)=\frac{53}{674}=0.08\]</span>
-Er sandsynligheden for fælleshændelsen lig med produktet af sandsynlighederne?
-<span class="math display">\[\small P(Dø\ dsdom)\cdot P(Hvid)=\frac{68}{674}\cdot \frac{483}{674}=0.10 \cdot 0.72=0.072\]</span>
-Sandsynlighederne 0.08 og 0.072 er tæt på hinanden, udtaler vi os om en population ville vi nok ikke kunne afvise at hændelserne er uafhængige. Vi vil i afsnittede om Chi i anden tests se på hvorledes man tester uafhængighed.</p>
-<details>
-<p><summary>Spørgsmål dødsdom</summary>
-Vi inddeler nu skemaet ovenfor, med en variabel, der angiver offerets race.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Race offer</th>
-<th align="left">Race tiltalt</th>
-<th align="left">Dødsdom</th>
-<th align="left">Ikke dødsdom</th>
-<th align="left">Total</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Hvid</td>
-<td align="left">Hvid</td>
-<td align="left">53</td>
-<td align="left">414</td>
-<td align="left">467</td>
-</tr>
-<tr class="even">
-<td align="left">Hvid</td>
-<td align="left">Afrikansk amerikaner</td>
-<td align="left">11</td>
-<td align="left">37</td>
-<td align="left">48</td>
-</tr>
-<tr class="odd">
-<td align="left">Afrikansk amerikaner</td>
-<td align="left">Hvid</td>
-<td align="left">0</td>
-<td align="left">16</td>
-<td align="left">16</td>
-</tr>
-<tr class="even">
-<td align="left">Afrikansk amerikaner</td>
-<td align="left">Afrikansk amerikaner</td>
-<td align="left">4</td>
-<td align="left">139</td>
-<td align="left">143</td>
-</tr>
-<tr class="odd">
-<td align="left">Total</td>
-<td align="left"></td>
-<td align="left">68</td>
-<td align="left">606</td>
-<td align="left">674</td>
-</tr>
-</tbody>
-</table>
-<p><strong>1.</strong> Hvad er sandsynligheden for at blive dødsdømt, hvis man er hvid tiltalt for at have dræbt en hvid?<br />
-<strong>2.</strong> Hvad er sandsynligheden for at blive dødsdømt, givet man er sort tiltalt for at have dræbt en hvid?<br />
-<strong>3.</strong> Hvad er sandsynligheden for at blive dødsdømt, givet man er hvid tiltalt for at have dræbt en sort?<br />
-<strong>4.</strong> Hvad er sandsynligheden for at blive dødsdømt, når man er sort tiltalt for at have dræbt en sort?</p>
-</details>
-<br>
-<details>
-<p><summary>Svar dødsdom</summary></p>
-<p><img src="img/usdeath2.jpg" align="right" width="30%" height="30%"style="border:0.0px solid #eeeeee; padding:5px; margin:6px;"/>
-<strong>1.</strong> Sandsynligheden for at blive dødsdømt, hvis man er hvid tiltalt for at have dræbt en hvid kan udregnes til:<br />
-<span class="math display">\[\small P(Dø\ dsdø\ mt \mid hvid\ tiltalt\ og\ hvidt\ offer)=\frac{53}{467}=0.1135\]</span><br />
-<strong>2.</strong> Sandsynligheden for at blive dødsdømt, givet man er sort tiltalt for at have dræbt en hvid kan udregnes til:<br />
-<span class="math display">\[\small P(Dø\ dsdø\ mt \mid sort\ tiltalt\ og\ hvidt\ offer)=\frac{11}{48}=0.2292\]</span><br />
-<strong>3.</strong> Sandsynligheden for at blive dødsdømt, givet man er hvid tiltalt for at have dræbt en sort kan udregnes til:<br />
-<span class="math display">\[\small P(Dø\ dsdø\ mt \mid hvid\ tiltalt\ og\ sort\ offer)=\frac{0}{16}=0\]</span>
-<strong>4.</strong> Sandsynligheden for at blive dødsdømt, når man er sort tiltalt for at have dræbt en sort kan udregnes til
-<span class="math display">\[\small P(Dø\ dsdø\ mt \mid sort\ tiltalt\ og\ sort\ offer)=\frac{4}{143}=0.0280\]</span></p>
-<p>Vi ser nu at der synes at være større sandsynlighed for dødsdom for sorte end for hvide, denne effekt kommer først frem når vi kontrollerer for offer race. Man kalder dette for Simpsons paradoks.</p>
-</details>
 </div>
 </div>
             </section>
@@ -316,8 +199,8 @@ Vi inddeler nu skemaet ovenfor, med en variabel, der angiver offerets race.</p>
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="chi-i-anden-tests.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="den-hypergeometriske-fordeling.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="stikprveteori.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
