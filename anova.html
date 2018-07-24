@@ -117,7 +117,7 @@
 <p>ANOVA er en metode til at sammenligne middelværdierne for mere end to kvantitative variable. Skal man sammenligne to middelværdier med varianshomogenitet, benytter man pooled t-test, er der mere end 2 middelværdier benyttes ANOVA F-test . Forudsætningerne for at benytte testen er at populationerne er normalfordelte og har samme varians.</p>
 <p>ANOVA er en forkortelse af analysis of variances, man tester om middelværdierne er ens vha. varianserne.
 Vi undersøger om k populationer har samme middelværdi, hypoteserne bliver:</p>
-<p><span class="math display">\[H_0:\mu_1=\mu_2=...=\mu_k\]</span><span class="math display">\[H_1:Ikke\ alle\ middelværdier\ er\ ens.\]</span></p>
+<p><span class="math display">\[H_0:\mu_1=\mu_2=...=\mu_k\]</span><span class="math display">\[H_1:Ikke\ alle\ middelvæ\ rdier\ er\ ens.\]</span></p>
 <p>Den totale variation SST kan opdeles i SSW og SSA hvor, SSW er variationen indenfor de k grupper, SSA er variationen mellem grupperne.</p>
 <p>Hvis variationen indenfor grupperne SSW er lille i forhold til variationen mellem grupperne SSA, er middelværdierne ikke ens.</p>
 <p>Herunder er et eksempel, hvor populationerne er dagsafkast for aktier, variationen indenfor grupperne SSW er lille i forhold til variationen mellem grupperne SSA, derfor er middelværdierne signifikant forskellige.</p>
@@ -134,55 +134,55 @@ Vi undersøger om k populationer har samme middelværdi, hypoteserne bliver:</p>
 </div>
 <p>Hent datasættet <a href="https://www.dropbox.com/s/ometq0ebwtynqtq/Hjemmesidedesigns%20bes%C3%B8gstider%20i%20millisekunder.xls?dl=1">Hjemmesidedesigns besøgstider i millisekunder.xls</a>, der viser de 359 observede besøgstider på de 4 hjemmesider.</p>
 <p>Forsikringsselskabet ønsker at undersøge om der er forskel på besøgstiderne, vi opstiller hypoteserne:</p>
-<p><span class="math display">\[H_0:\mu_{Design 1}=\mu_{Design 2}=\mu_{Design 3}=\mu_{Design 4}\]</span><span class="math display">\[H_1:Ikke\ alle\ middelværdier\ er\ ens\ for\ de\ 4\ designs.\]</span></p>
+<p><span class="math display">\[H_0:\mu_{Design 1}=\mu_{Design 2}=\mu_{Design 3}=\mu_{Design 4}\]</span><span class="math display">\[H_1:Ikke\ alle\ middelvæ\ rdier\ er\ ens\ for\ de\ 4\ designs.\]</span></p>
 <p>Freestat output
-<img src="img/anova1.png" alt="anova1.png" /></p>
+<img src="img/anova1.png" /></p>
 <p>Vi får en F-teststørrelse på 6.0429, der resulterer i en p-værdi på 0.0005, hvilket er under signifikansniveauet på 0.05. Vi kan forkaster altså nulhypotesen om ens middelværdier.</p>
 <p>Freestat output
-<img src="img/anovaFtest.png" alt="anovaFtest.png" /></p>
+<img src="img/anovaFtest.png" /></p>
 <p>Vi skal tjekke forudsætningen om varianshomogenitet</p>
 <p><span class="math display">\[H_0:\sigma_{Design 1}=\sigma_{Design 2}=\sigma_{Design 3}=\sigma_{Design 4}\]</span><span class="math display">\[H_1:Ikke\ alle\ varianser\ er\ ens\ for\ de\ 4\ designs.\]</span></p>
 <p>Vi får en teststørrelse på 1.4742741. Chi i anden testet giver os en p-værdi på 0.6882205, hvilket er større end signifikanssandsynligheden på 0.05, vi kan ikke afvise nulhypotesen. Varianserne er ens, så forudsætningen er opfyldt.</p>
 <p>Freestat output af Bartlett test for varianshomogenitet
-<img src="img/Bartlett.png" alt="Bartlett.png" /></p>
+<img src="img/Bartlett.png" /></p>
 <p>Normalitet</p>
 <p>Herunder er 4 normalfraktildiagrammer, for de 4 designs, vi kan godt antage, stikprøverne stammer fra normalfordelte populationer.</p>
 <p><img src="bookdown-demo_files/figure-html/qqplots15_25-1.svg" width="864" /></p>
 <p>Tukey Kramer</p>
 <p>Vi kan undersøge hvilke designs der har de største afvigelser ved at se på forskellene mellem stikprøvegennemsnittene, der er størst forskel mellem besøgstiderne for design 1 og design 4.</p>
-<div class="figure">
-<img src="img/Tukeykramer.png" alt="Tukeykramer.png" />
-<p class="caption">Tukeykramer.png</p>
-</div>
+<p><img src="img/Tukeykramer.png" /></p>
 <p>Vi kan grafisk sammenligne middelværdierne i boxplots, her ser vi ligeledes forskellen er størst mellem design 1 og design 4. Middelværdierne er markeret med orange prikker.</p>
 <p><img src="bookdown-demo_files/figure-html/boxplots-1.svg" width="864" /></p>
-<p>[toggle title=Spørgsmål]</p>
+<details>
+<p><summary>Spørgsmål 3 banker afkast</summary></p>
 <p>Hent datasættet <a href="https://www.dropbox.com/s/5z8ynkyyv1pqfpk/3%20Banker%20Ugeafkast%20i%20procent.xls?dl=1">3 Banker Ugeafkast i procent.xls</a>, i dette datasæt er de seneste 239 ugers afkast i procent for hhv. Danske Bank, Jyske Bank og Sydbank. Er der signifikant forskel på afkastene på de 3 bankaktier?</p>
-<p>[/toggle]
-[toggle title=Svar]
+</details>
+<br>
+<details>
+<p><summary>Svar 3 banker afkast</summary>
 Vi opstiller hypoteserne for test af om middelværdierne er identiske:
-<span class="math display">\[H_0:\mu_{Danske Bank}=\mu_{Jyske Bank}=\mu_{Sydbank}\]</span><span class="math display">\[H_1:Ikke\ alle\ middelværdier\ er\ ens\ for\ de\ 3\ banker\]</span></p>
+<span class="math display">\[H_0:\mu_{Danske Bank}=\mu_{Jyske Bank}=\mu_{Sydbank}\]</span><span class="math display">\[H_1:Ikke\ alle\ middelvæ\ rdier\ er\ ens\ for\ de\ 3\ banker\]</span></p>
 <p>Vi får variationen i grupperne SSW til 296772869957.892 og variationen mellem grupperne SSA til 15155248763.2056. Dette giver en F-teststørrelse på 6.0429 der resulterer i p-værdi på 0.0005. Vi kan altså ikke forkaste altså nulhypotesen om ens middelværdier.</p>
 <p>Vi kan da også se at de absolutte forskelle mellem stikprøvegennemsnittene er relativt små:</p>
 <table>
 <thead>
 <tr class="header">
-<th>Forskelle mellem Banker</th>
-<th>Absolutte forskelle</th>
+<th align="left">Forskelle mellem Banker</th>
+<th align="left">Absolutte forskelle</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Danske Bank - Jyske Bank</td>
-<td>0.13</td>
+<td align="left">Danske Bank - Jyske Bank</td>
+<td align="left">0.13</td>
 </tr>
 <tr class="even">
-<td>Danske Bank - Sydbank</td>
-<td>0.04</td>
+<td align="left">Danske Bank - Sydbank</td>
+<td align="left">0.04</td>
 </tr>
 <tr class="odd">
-<td>Jyske Bank - Sydbank</td>
-<td>0.17</td>
+<td align="left">Jyske Bank - Sydbank</td>
+<td align="left">0.17</td>
 </tr>
 </tbody>
 </table>
@@ -192,14 +192,18 @@ Vi opstiller hypoteserne for test af om middelværdierne er identiske:
 <p>Normalitet</p>
 <p><img src="bookdown-demo_files/figure-html/qqplotbank-1.svg" width="864" /></p>
 <p>Vi kan grafisk sammenligne middelværdierne for ugeafkastet for de 3 banker i boxplots , her ser vi der ikke er stor forskel på middelværdierne. Middelværdierne er markeret med orange prikker.</p>
-<p><img src="bookdown-demo_files/figure-html/boxplotsbank-1.svg" width="864" />
-[/toggle]
-[toggle title=Spørgsmål]</p>
-<p><a href="https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlWlFNLTVoMEU1WHM" download="Imdb data">Hent Imdb data</a> der viser data for 759 film simpelt tilfældigt udtrukket af en database med 759 film. Vi ønsker at se om, der er forskel på vurderingen af de forskellige genrer action, komedie, drama, documentar, romance og short, undersøg dette vha. ANOVA test
-[/toggle]
-[toggle title=Svar]</p>
+<img src="bookdown-demo_files/figure-html/boxplotsbank-1.svg" width="864" />
+</details>
+<br>
+<details>
+<p><summary>Spørgsmål IMDB</summary></p>
+<p><a href="https://drive.google.com/uc?export=download&id=0B1E7VnhxsDMlWlFNLTVoMEU1WHM" download="Imdb data">Hent Imdb data</a> der viser data for 759 film simpelt tilfældigt udtrukket af en database med 759 film. Vi ønsker at se om, der er forskel på vurderingen af de forskellige genrer action, komedie, drama, documentar, romance og short, undersøg dette vha. ANOVA test</p>
+</details>
+<br>
+<details>
+<p><summary>Svar IMDB</summary></p>
 <p>Vi opstiller hypoteserne:</p>
-<p><span class="math display">\[H_0:\mu_{action}=\mu_{komedie}=\mu_{drama}=\mu_{documentar}=\mu_{romance}=\mu_{short}\]</span><span class="math display">\[H_1:Ikke\ alle\ middelværdier\ er\ ens\ for\ de\ 5\ genrer.\]</span></p>
+<p><span class="math display">\[H_0:\mu_{action}=\mu_{komedie}=\mu_{drama}=\mu_{documentar}=\mu_{romance}=\mu_{short}\]</span><span class="math display">\[H_1:Ikke\ alle\ middelvæ\ rdier\ er\ ens\ for\ de\ 5\ genrer.\]</span></p>
 <p>Vi får en F-teststørrelse på 10.786, der resulterer i en meget lille p-værdi på 0, hvilket er klart under signifikansniveauet på 0.05. Vi kan forkaster altså nulhypotesen om ens middelværdier.</p>
 <p>Vi skal tjekke forudsætningen om varianshomogenitet</p>
 <p><span class="math display">\[H_0:\sigma_{action}=\sigma_{komedie}=\sigma_{drama}=\sigma_{documentar}=\sigma_{romance}=\sigma_{short}\]</span><span class="math display">\[H_1:Ikke\ alle\ standardafvigelser\ er\ ens\ for\ de\ 5\ genrer.\]</span></p>
@@ -279,7 +283,8 @@ Vi opstiller hypoteserne for test af om middelværdierne er identiske:
 </tr>
 </tbody>
 </table>
-<p>[/toggle]</p>
+</details>
+<p><a href="DKaktiekurser.xlsx">test</a></p>
 
 </div>
             </section>
