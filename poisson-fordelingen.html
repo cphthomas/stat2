@@ -163,25 +163,31 @@
 <p>Vi får følgende sandsynlighedfordeling.</p>
 <p><img src="bookdown-demo_files/figure-html/hyp3-1.svg" width="864" /></p>
 <p>Nedenfor ses output fra Freestat:
-<img src="img/poisson.png" alt="rmd" /></p>
-<p>[toggle title=Spørgsmål]
-<img src="img/bankkunder.jpg" align="right" width="30%" height="30%"style="border:0.0px solid #eeeeee; padding:5px;margin:6px;"/>
+<img src="img/poisson.png" /></p>
+<br>
+<details>
+<p><summary>Spørgsmål bankkunder</summary></p>
+<p><img src="img/bankkunder.jpg" align="right" width="30%" height="30%"style="border:0.0px solid #eeeeee; padding:5px;margin:6px;"/>
 Antag at antal kunder der ankommer i en bank i minuttet er poissonfordelt med intensitet 2.
 1. Hvad er sandsynligheden for der netop ankommer 1 kunde i minuttet?
 2. Hvad er sandsynligheden for der netop ankommer 10 kunder på 10 minutter?
-3. Hvad er sandsynligheden for der mindst ankommer 1 kunde i minuttet?
-[/toggle]
-[toggle title=Svar]
-1. Vi skal finde sandsynligheden for der netop ankommer 1 kunde i minuttet. Her er tale om en poisson fordeling med parameter <span class="math inline">\(\lambda\)</span>=2, vi ønsker at bestemme sandsynligheden for at x=1.
+3. Hvad er sandsynligheden for der mindst ankommer 1 kunde i minuttet?</p>
+</details>
+<br>
+<details>
+<p><summary>Svar bankkunder</summary></p>
+<ol style="list-style-type: decimal">
+<li><p>Vi skal finde sandsynligheden for der netop ankommer 1 kunde i minuttet. Her er tale om en poisson fordeling med parameter <span class="math inline">\(\lambda\)</span>=2, vi ønsker at bestemme sandsynligheden for at x=1.
 <span class="math display">\[P(X=1)=\frac{e^{-\lambda}\cdot \lambda^x}{x!}=\frac{e^{-2}\cdot 2^1}{1!}=0.2707\]</span>
-<img src="img/poisson2.png" alt="rmd" />
-2. Vi skal finde sandsynligheden for der netop ankommer 10 kunder på 10 minutter. Her er tale om en poisson fordeling med parameter <span class="math inline">\(\lambda\)</span>=20. Vi skal jo betragte 10 minutters intervallet, derfor ganger vi intensiteten for 1 minut <span class="math inline">\(\lambda\)</span>=2 med 10. Vi ønsker at bestemme sandsynligheden for at x=10.
+<img src="img/poisson2.png" /></p></li>
+<li><p>Vi skal finde sandsynligheden for der netop ankommer 10 kunder på 10 minutter. Her er tale om en poisson fordeling med parameter <span class="math inline">\(\lambda\)</span>=20. Vi skal jo betragte 10 minutters intervallet, derfor ganger vi intensiteten for 1 minut <span class="math inline">\(\lambda\)</span>=2 med 10. Vi ønsker at bestemme sandsynligheden for at x=10.
 <span class="math display">\[P(X=10)=\frac{e^{-\lambda}\cdot \lambda^x}{x!}=\frac{e^{-20}\cdot 20^{10}}{10!}=0.0058\]</span>
-<img src="img/poisson3.png" alt="rmd" />
-3. Vi kan bestemme sandsynligheden for der mindst ankommer 1 kunde i minuttet ved:
+<img src="img/poisson3.png" /></p></li>
+<li><p>Vi kan bestemme sandsynligheden for der mindst ankommer 1 kunde i minuttet ved:
 <span class="math display">\[P(X\geq 1)=1-P(X=0)=1-0.1353=0.8647\]</span>
-<img src="img/poisson2.png" alt="rmd" /></p>
-<p>[/toggle]</p>
+<img src="img/poisson2.png" /></p></li>
+</ol>
+</details>
 <div id="selvtest-4" class="section level2">
 <h2><span class="header-section-number">6.1</span> Selvtest</h2>
 <h2>
